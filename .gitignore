@@ -122,4 +122,4 @@ dmypy.json
 tensorflow_code
 
 # nohup
-.out
+*.out
