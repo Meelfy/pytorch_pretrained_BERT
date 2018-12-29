@@ -2828,3 +2828,180 @@ tensor(35.9784, device='cuda:0', grad_fn=<MeanBackward1>) tensor(36.0474, devic
 Iteration:  38%|███▊      | 2799/7331 [51:23<1:30:44,  1.20s/it][A
 Iteration:  38%|███▊      | 2800/7331 [51:24<1:28:23,  1.17s/it][A
 Iteration:  38%|███▊      | 2801/7331 [51:26<1:28:14,  1.17s/it][A
+Iteration:  38%|███▊      | 2802/7331 [51:27<1:26:32,  1.15s/it][A
+Iteration:  38%|███▊      | 2803/7331 [51:28<1:25:32,  1.13s/it][A
+Iteration:  38%|███▊      | 2804/7331 [51:29<1:25:46,  1.14s/it][A
+Iteration:  38%|███▊      | 2805/7331 [51:30<1:26:14,  1.14s/it][A
+Iteration:  38%|███▊      | 2806/7331 [51:31<1:26:20,  1.14s/it][A
+Iteration:  38%|███▊      | 2807/7331 [51:32<1:25:15,  1.13s/it][A
+Iteration:  38%|███▊      | 2808/7331 [51:33<1:24:20,  1.12s/it][A
+Iteration:  38%|███▊      | 2809/7331 [51:35<1:24:24,  1.12s/it][A
+Iteration:  38%|███▊      | 2810/7331 [51:36<1:24:41,  1.12s/it][A
+Iteration:  38%|███▊      | 2811/7331 [51:37<1:24:43,  1.12s/it][A
+Iteration:  38%|███▊      | 2812/7331 [51:38<1:24:07,  1.12s/it][A
+Iteration:  38%|███▊      | 2813/7331 [51:39<1:25:28,  1.14s/it][A tensor(4.3641, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.2420, device='cuda:0', grad_fn=<MeanBackward1>) tensor(11.4031, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.3037, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.1472, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.4274, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.5852, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.9585, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.9201, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.2420, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.8002, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.7107, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.8566, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.6226, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.5193, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.1667, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.5595, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.6182, device='cuda:0', grad_fn=<MeanBackward1>) tensor(11.2185, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.9861, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.0028, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.7375, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.5231, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.3947, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.3080, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.9209, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.7507, device='cuda:0', grad_fn=<MeanBackward1>) tensor(11.1827, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.8423, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.2000, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.4133, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.6079, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.1799, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.7363, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.6537, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.8219, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.4987, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.8063, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.1615, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.0675, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.3540, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.3715, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.3680, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.2891, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.2943, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.6057, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.2249, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.9936, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.4337, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.9357, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.0351, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.5481, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.1106, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.2849, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.5181, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.8960, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.9129, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.1022, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.8495, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.5780, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.5304, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.3623, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.2603, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.8013, device='cuda:0', grad_fn=<MeanBackward1>) tensor(9.4553, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.7307, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.3853, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.9789, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.5939, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.6504, device='cuda:0', grad_fn=<MeanBackward1>) tensor(10.4479, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.9518, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.5774, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.8443, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.8923, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.7117, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.2173, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.7356, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.0726, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.2321, device='cuda:0', grad_fn=<MeanBackward1>) tensor(11.2208, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.7509, device='cuda:0', grad_fn=<MeanBackward1>) tensor(9.9122, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.8103, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.7291, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.5799, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.3452, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.4231, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.5712, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.8921, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.9367, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.4525, device='cuda:0', grad_fn=<MeanBackward1>) tensor(9.7404, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.7733, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.2894, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.7876, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.2562, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.7560, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.9520, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.4973, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.1456, device='cuda:0', grad_fn=<MeanBackward1>) tensor(10.6876, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.2549, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.9566, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.4599, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.3781, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.1655, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.1718, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.0199, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.3476, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.1545, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.2961, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.9753, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.3554, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.1185, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.7917, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.1521, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.7859, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.1823, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.2095, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.8131, device='cuda:0', grad_fn=<MeanBackward1>) tensor(11.8403, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.2140, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.0824, device='cuda:0', grad_fn=<MeanBackward1>) tensor(9.7675, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.0276, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.2927, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.1057, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.0443, device='cuda:0', grad_fn=<MeanBackward1>) tensor(12.0847, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.7793, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.2584, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.0612, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.3757, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.1067, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.3453, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.9084, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.5122, device='cuda:0', grad_fn=<MeanBackward1>) tensor(1.8752, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.2908, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.5020, device='cuda:0', grad_fn=<MeanBackward1>) tensor(1.4664, device='cuda:0', grad_fn=<MeanBackward1>)
+Iteration:  38%|███▊      | 2814/7331 [51:40<1:26:19,  1.15s/it][A
+Iteration:  38%|███▊      | 2815/7331 [51:41<1:18:36,  1.04s/it][A
+Iteration:  38%|███▊      | 2816/7331 [51:42<1:07:33,  1.11it/s][A
+Iteration:  38%|███▊      | 2817/7331 [51:42<59:34,  1.26it/s]  [A
+Iteration:  38%|███▊      | 2818/7331 [51:43<53:58,  1.39it/s][A
+Iteration:  38%|███▊      | 2819/7331 [51:43<50:08,  1.50it/s][A
+Iteration:  38%|███▊      | 2820/7331 [51:44<47:14,  1.59it/s][A
+Iteration:  38%|███▊      | 2821/7331 [51:44<45:26,  1.65it/s][A
+Iteration:  38%|███▊      | 2822/7331 [51:45<43:28,  1.73it/s][A
+Iteration:  39%|███▊      | 2823/7331 [51:46<55:27,  1.35it/s][A
+Iteration:  39%|███▊      | 2824/7331 [51:47<1:04:58,  1.16it/s][A
+Iteration:  39%|███▊      | 2825/7331 [51:48<1:11:26,  1.05it/s][A
+Iteration:  39%|███▊      | 2826/7331 [51:49<1:16:24,  1.02s/it][A
+Iteration:  39%|███▊      | 2827/7331 [51:51<1:19:33,  1.06s/it][A
+Iteration:  39%|███▊      | 2828/7331 [51:52<1:20:49,  1.08s/it][A
+Iteration:  39%|███▊      | 2829/7331 [51:53<1:21:15,  1.08s/it][A
+Iteration:  39%|███▊      | 2830/7331 [51:54<1:21:33,  1.09s/it][A
+Iteration:  39%|███▊      | 2831/7331 [51:55<1:23:25,  1.11s/it][A
+Iteration:  39%|███▊      | 2832/7331 [51:56<1:22:52,  1.11s/it][A
+Iteration:  39%|███▊      | 2833/7331 [51:57<1:23:23,  1.11s/it][A
+Iteration:  39%|███▊      | 2834/7331 [51:58<1:23:15,  1.11s/it][A
+Iteration:  39%|███▊      | 2835/7331 [52:00<1:24:41,  1.13s/it][A
+Iteration:  39%|███▊      | 2836/7331 [52:01<1:25:46,  1.14s/it][A
+Iteration:  39%|███▊      | 2837/7331 [52:02<1:25:37,  1.14s/it][A
+Iteration:  39%|███▊      | 2838/7331 [52:03<1:25:38,  1.14s/it][A
+Iteration:  39%|███▊      | 2839/7331 [52:04<1:24:55,  1.13s/it][A
+Iteration:  39%|███▊      | 2840/7331 [52:05<1:25:04,  1.14s/it][A
+Iteration:  39%|███▉      | 2841/7331 [52:06<1:24:31,  1.13s/it][A
+Iteration:  39%|███▉      | 2842/7331 [52:08<1:24:33,  1.13s/it][A
+Iteration:  39%|███▉      | 2843/7331 [52:09<1:24:03,  1.12s/it][A
+Iteration:  39%|███▉      | 2844/7331 [52:10<1:23:57,  1.12s/it][A
+Iteration:  39%|███▉      | 2845/7331 [52:11<1:24:33,  1.13s/it][A
+Iteration:  39%|███▉      | 2846/7331 [52:12<1:24:45,  1.13s/it][A
+Iteration:  39%|███▉      | 2847/7331 [52:13<1:25:38,  1.15s/it][A
+Iteration:  39%|███▉      | 2848/7331 [52:14<1:25:10,  1.14s/it][A
+Iteration:  39%|███▉      | 2849/7331 [52:16<1:24:44,  1.13s/it][A
+Iteration:  39%|███▉      | 2850/7331 [52:17<1:23:37,  1.12s/it][A
+Iteration:  39%|███▉      | 2851/7331 [52:18<1:24:05,  1.13s/it][A
+Iteration:  39%|███▉      | 2852/7331 [52:19<1:24:33,  1.13s/it][A
+Iteration:  39%|███▉      | 2853/7331 [52:20<1:24:57,  1.14s/it][A
+Iteration:  39%|███▉      | 2854/7331 [52:21<1:24:25,  1.13s/it][A
+Iteration:  39%|███▉      | 2855/7331 [52:22<1:24:18,  1.13s/it][A
+Iteration:  39%|███▉      | 2856/7331 [52:23<1:23:31,  1.12s/it][A
+Iteration:  39%|███▉      | 2857/7331 [52:24<1:22:14,  1.10s/it][A
+Iteration:  39%|███▉      | 2858/7331 [52:26<1:21:02,  1.09s/it][A
+Iteration:  39%|███▉      | 2859/7331 [52:27<1:21:59,  1.10s/it][A
+Iteration:  39%|███▉      | 2860/7331 [52:28<1:21:43,  1.10s/it][A
+Iteration:  39%|███▉      | 2861/7331 [52:29<1:22:13,  1.10s/it][A
+Iteration:  39%|███▉      | 2862/7331 [52:30<1:24:22,  1.13s/it][A
+Iteration:  39%|███▉      | 2863/7331 [52:31<1:23:36,  1.12s/it][A
+Iteration:  39%|███▉      | 2864/7331 [52:32<1:23:14,  1.12s/it][A
+Iteration:  39%|███▉      | 2865/7331 [52:33<1:23:17,  1.12s/it][A
+Iteration:  39%|███▉      | 2866/7331 [52:34<1:23:04,  1.12s/it][A
+Iteration:  39%|███▉      | 2867/7331 [52:36<1:24:39,  1.14s/it][A
+Iteration:  39%|███▉      | 2868/7331 [52:37<1:25:37,  1.15s/it][A
+Iteration:  39%|███▉      | 2869/7331 [52:38<1:24:23,  1.13s/it][A
+Iteration:  39%|███▉      | 2870/7331 [52:39<1:23:18,  1.12s/it][A
+Iteration:  39%|███▉      | 2871/7331 [52:40<1:22:32,  1.11s/it][A
+Iteration:  39%|███▉      | 2872/7331 [52:41<1:22:37,  1.11s/it][A
+Iteration:  39%|███▉      | 2873/7331 [52:42<1:22:46,  1.11s/it][A
+Iteration:  39%|███▉      | 2874/7331 [52:44<1:23:07,  1.12s/it][A
+Iteration:  39%|███▉      | 2875/7331 [52:45<1:24:17,  1.14s/it][A
+Iteration:  39%|███▉      | 2876/7331 [52:46<1:25:26,  1.15s/it][A
+Iteration:  39%|███▉      | 2877/7331 [52:47<1:25:30,  1.15s/it][A
+Iteration:  39%|███▉      | 2878/7331 [52:48<1:24:58,  1.15s/it][A
+Iteration:  39%|███▉      | 2879/7331 [52:49<1:23:29,  1.13s/it][A
+Iteration:  39%|███▉      | 2880/7331 [52:50<1:23:48,  1.13s/it][A
+Iteration:  39%|███▉      | 2881/7331 [52:51<1:23:02,  1.12s/it][A
+Iteration:  39%|███▉      | 2882/7331 [52:53<1:23:04,  1.12s/it][A
+Iteration:  39%|███▉      | 2883/7331 [52:54<1:22:40,  1.12s/it][A
+Iteration:  39%|███▉      | 2884/7331 [52:55<1:24:55,  1.15s/it][A
+Iteration:  39%|███▉      | 2885/7331 [52:56<1:24:52,  1.15s/it][A
+Iteration:  39%|███▉      | 2886/7331 [52:57<1:23:33,  1.13s/it][A
+Iteration:  39%|███▉      | 2887/7331 [52:58<1:23:19,  1.12s/it][A
+Iteration:  39%|███▉      | 2888/7331 [52:59<1:23:45,  1.13s/it][A
+Iteration:  39%|███▉      | 2889/7331 [53:01<1:23:19,  1.13s/it][A
+Iteration:  39%|███▉      | 2890/7331 [53:02<1:23:43,  1.13s/it][A
+Iteration:  39%|███▉      | 2891/7331 [53:03<1:24:33,  1.14s/it][A
+Iteration:  39%|███▉      | 2892/7331 [53:04<1:24:25,  1.14s/it][A
+Iteration:  39%|███▉      | 2893/7331 [53:05<1:25:34,  1.16s/it][A
+Iteration:  39%|███▉      | 2894/7331 [53:06<1:26:24,  1.17s/it][A
+Iteration:  39%|███▉      | 2895/7331 [53:07<1:25:19,  1.15s/it][A
+Iteration:  40%|███▉      | 2896/7331 [53:09<1:26:09,  1.17s/it][A
+Iteration:  40%|███▉      | 2897/7331 [53:10<1:25:26,  1.16s/it][A
+Iteration:  40%|███▉      | 2898/7331 [53:11<1:25:11,  1.15s/it][A
+Iteration:  40%|███▉      | 2899/7331 [53:12<1:24:41,  1.15s/it][A
+Iteration:  40%|███▉      | 2900/7331 [53:13<1:24:14,  1.14s/it][A
+Iteration:  40%|███▉      | 2901/7331 [53:14<1:25:09,  1.15s/it][A
+Iteration:  40%|███▉      | 2902/7331 [53:16<1:25:45,  1.16s/it][A
+Iteration:  40%|███▉      | 2903/7331 [53:17<1:24:42,  1.15s/it][A
+Iteration:  40%|███▉      | 2904/7331 [53:18<1:23:52,  1.14s/it][A
+Iteration:  40%|███▉      | 2905/7331 [53:19<1:23:12,  1.13s/it][A
+Iteration:  40%|███▉      | 2906/7331 [53:20<1:22:14,  1.12s/it][A
+Iteration:  40%|███▉      | 2907/7331 [53:21<1:23:24,  1.13s/it][A
+Iteration:  40%|███▉      | 2908/7331 [53:22<1:23:21,  1.13s/it][A
+Iteration:  40%|███▉      | 2909/7331 [53:23<1:22:51,  1.12s/it][A
+Iteration:  40%|███▉      | 2910/7331 [53:25<1:25:02,  1.15s/it][A
+Iteration:  40%|███▉      | 2911/7331 [53:26<1:25:32,  1.16s/it][A
+Iteration:  40%|███▉      | 2912/7331 [53:27<1:23:32,  1.13s/it][A
+Iteration:  40%|███▉      | 2913/7331 [53:28<1:23:01,  1.13s/it][A
+Iteration:  40%|███▉      | 2914/7331 [53:29<1:23:22,  1.13s/it][A
+Iteration:  40%|███▉      | 2915/7331 [53:30<1:23:03,  1.13s/it][A
+Iteration:  40%|███▉      | 2916/7331 [53:31<1:22:44,  1.12s/it][A
+Iteration:  40%|███▉      | 2917/7331 [53:32<1:23:06,  1.13s/it][A
+Iteration:  40%|███▉      | 2918/7331 [53:34<1:23:51,  1.14s/it][A
+Iteration:  40%|███▉      | 2919/7331 [53:35<1:23:40,  1.14s/it][A
+Iteration:  40%|███▉      | 2920/7331 [53:36<1:22:45,  1.13s/it][A
+Iteration:  40%|███▉      | 2921/7331 [53:37<1:21:48,  1.11s/it][A
+Iteration:  40%|███▉      | 2922/7331 [53:38<1:22:42,  1.13s/it][A
+Iteration:  40%|███▉      | 2923/7331 [53:39<1:23:43,  1.14s/it][A
+Iteration:  40%|███▉      | 2924/7331 [53:40<1:23:40,  1.14s/it][A
+Iteration:  40%|███▉      | 2925/7331 [53:42<1:24:59,  1.16s/it][A
+Iteration:  40%|███▉      | 2926/7331 [53:43<1:24:19,  1.15s/it][A
+Iteration:  40%|███▉      | 2927/7331 [53:44<1:23:33,  1.14s/it][A
+Iteration:  40%|███▉      | 2928/7331 [53:45<1:22:14,  1.12s/it][A
+Iteration:  40%|███▉      | 2929/7331 [53:46<1:20:20,  1.10s/it][A
+Iteration:  40%|███▉      | 2930/7331 [53:47<1:21:33,  1.11s/it][A
+Iteration:  40%|███▉      | 2931/7331 [53:48<1:21:12,  1.11s/it][A
+Iteration:  40%|███▉      | 2932/7331 [53:49<1:20:56,  1.10s/it][A
+Iteration:  40%|████      | 2933/7331 [53:50<1:21:02,  1.11s/it][A
+Iteration:  40%|████      | 2934/7331 [53:52<1:22:15,  1.12s/it][A
+Iteration:  40%|████      | 2935/7331 [53:53<1:22:29,  1.13s/it][A
+Iteration:  40%|████      | 2936/7331 [53:54<1:24:20,  1.15s/it][A
+Iteration:  40%|████      | 2937/7331 [53:55<1:23:32,  1.14s/it][A
+Iteration:  40%|████      | 2938/7331 [53:56<1:21:52,  1.12s/it][A
+Iteration:  40%|████      | 2939/7331 [53:57<1:20:59,  1.11s/it][A
+Iteration:  40%|████      | 2940/7331 [53:58<1:22:00,  1.12s/it][A
+Iteration:  40%|████      | 2941/7331 [53:59<1:21:57,  1.12s/it][A
+Iteration:  40%|████      | 2942/7331 [54:01<1:23:42,  1.14s/it][A
+Iteration:  40%|████      | 2943/7331 [54:02<1:24:18,  1.15s/it][A
+Iteration:  40%|████      | 2944/7331 [54:03<1:23:16,  1.14s/it][A
+Iteration:  40%|████      | 2945/7331 [54:04<1:23:11,  1.14s/it][A
+Iteration:  40%|████      | 2946/7331 [54:05<1:22:05,  1.12s/it][A
+Iteration:  40%|████      | 2947/7331 [54:06<1:21:37,  1.12s/it][A
+Iteration:  40%|████      | 2948/7331 [54:07<1:20:23,  1.10s/it][A
+Iteration:  40%|████      | 2949/7331 [54:08<1:20:29,  1.10s/it][A
+Iteration:  40%|████      | 2950/7331 [54:10<1:21:31,  1.12s/it][A
+Iteration:  40%|████      | 2951/7331 [54:11<1:21:42,  1.12s/it][A
+Iteration:  40%|████      | 2952/7331 [54:12<1:23:24,  1.14s/it][A
+Iteration:  40%|████      | 2953/7331 [54:13<1:23:14,  1.14s/it][A
+Iteration:  40%|████      | 2954/7331 [54:14<1:21:26,  1.12s/it][A
+Iteration:  40%|████      | 2955/7331 [54:15<1:21:28,  1.12s/it][A tensor(3.4266, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.1821, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.1554, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.2219, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.3422, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.0878, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.1785, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.1925, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.1596, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.5385, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.6591, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.4243, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.9642, device='cuda:0', grad_fn=<MeanBackward1>) tensor(9.0914, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.5641, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.8525, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.1249, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.7157, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.6461, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.6939, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.8438, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.4830, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.4042, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.8983, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.7975, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.4288, device='cuda:0', grad_fn=<MeanBackward1>) tensor(9.3856, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.5734, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.0837, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.3125, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.2323, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.1759, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.7182, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.8233, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.3624, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.9483, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.6228, device='cuda:0', grad_fn=<MeanBackward1>) tensor(10.5587, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.2586, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.9614, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.0537, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.1890, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.0966, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.3094, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.3474, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.8499, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.7361, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.2378, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.2024, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.9654, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.1306, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.1731, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.0823, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.6002, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.2176, device='cuda:0', grad_fn=<MeanBackward1>) tensor(11.0211, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.1786, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.5974, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.9954, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.1614, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.4409, device='cuda:0', grad_fn=<MeanBackward1>) tensor(9.1864, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.3200, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.9734, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.4820, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.6213, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.3716, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.9758, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.5562, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.4156, device='cuda:0', grad_fn=<MeanBackward1>) tensor(11.0391, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.7883, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.8287, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.9662, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.6695, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.7986, device='cuda:0', grad_fn=<MeanBackward1>) tensor(10.0423, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.9269, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.1317, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.2015, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.2387, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.6784, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.1795, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.0642, device='cuda:0', grad_fn=<MeanBackward1>) tensor(12.1365, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.7878, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.5811, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.1651, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.7784, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.4610, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.3460, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.9993, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.0723, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.2394, device='cuda:0', grad_fn=<MeanBackward1>) tensor(17.0015, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.5394, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.2998, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.0241, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.1871, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.2254, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.4410, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.0750, device='cuda:0', grad_fn=<MeanBackward1>) tensor(9.5502, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.4736, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.6168, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.0302, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.3358, device='cuda:0', grad_fn=<MeanBackward1>) tensor(1.8264, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.9088, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.5685, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.4665, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.1172, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.5068, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.1432, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.4143, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.1808, device='cuda:0', grad_fn=<MeanBackward1>) tensor(10.4285, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.6367, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.7245, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.0016, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.5388, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.9359, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.7406, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.0415, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.5337, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.7132, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.4517, device='cuda:0', grad_fn=<MeanBackward1>) tensor(9.0555, device='cuda:0', grad_fn=<MeanBackward1>) tensor(7.8112, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.8039, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.3258, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.2894, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.4564, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.4397, device='cuda:0', grad_fn=<MeanBackward1>) tensor(5.2619, device='cuda:0', grad_fn=<MeanBackward1>) tensor(3.1673, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.1859, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.4793, device='cuda:0', grad_fn=<MeanBackward1>) tensor(8.4518, device='cuda:0', grad_fn=<MeanBackward1>) tensor(6.1881, device='cuda:0', grad_fn=<MeanBackward1>) tensor(4.3235, device='cuda:0', grad_fn=<MeanBackward1>) tensor(2.9273, device='cuda:0', grad_fn=<MeanBackward1>)
+Iteration:  40%|████      | 2956/7331 [54:16<1:21:46,  1.12s/it][A
+Iteration:  40%|████      | 2957/7331 [54:17<1:21:02,  1.11s/it][A
+Iteration:  40%|████      | 2958/7331 [54:19<1:23:06,  1.14s/it][A
+Iteration:  40%|████      | 2959/7331 [54:20<1:23:41,  1.15s/it][A
+Iteration:  40%|████      | 2960/7331 [54:21<1:23:55,  1.15s/it][A
+Iteration:  40%|████      | 2961/7331 [54:22<1:22:57,  1.14s/it][A
+Iteration:  40%|████      | 2962/7331 [54:23<1:22:17,  1.13s/it][A
+Iteration:  40%|████      | 2963/7331 [54:24<1:22:00,  1.13s/it][A
+Iteration:  40%|████      | 2964/7331 [54:25<1:21:33,  1.12s/it][A
+Iteration:  40%|████      | 2965/7331 [54:27<1:21:56,  1.13s/it][A
+Iteration:  40%|████      | 2966/7331 [54:28<1:21:51,  1.13s/it][A
+Iteration:  40%|████      | 2967/7331 [54:29<1:23:38,  1.15s/it][A
+Iteration:  40%|████      | 2968/7331 [54:30<1:24:05,  1.16s/it][A
+Iteration:  40%|████      | 2969/7331 [54:31<1:22:17,  1.13s/it][A
+Iteration:  41%|████      | 2970/7331 [54:32<1:22:19,  1.13s/it][A
+Iteration:  41%|████      | 2971/7331 [54:33<1:21:44,  1.12s/it][A
+Iteration:  41%|████      | 2972/7331 [54:34<1:20:50,  1.11s/it][A
+Iteration:  41%|████      | 2973/7331 [54:36<1:21:06,  1.12s/it][A
+Iteration:  41%|████      | 2974/7331 [54:37<1:21:08,  1.12s/it][A
+Iteration:  41%|████      | 2975/7331 [54:38<1:22:24,  1.14s/it][A
+Iteration:  41%|████      | 2976/7331 [54:39<1:23:58,  1.16s/it][A
+Iteration:  41%|████      | 2977/7331 [54:40<1:22:38,  1.14s/it][A
+Iteration:  41%|████      | 2978/7331 [54:41<1:21:40,  1.13s/it][A
