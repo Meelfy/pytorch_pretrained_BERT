@@ -812,7 +812,7 @@ def main():
 
     # Prepare model
     model = BertForQuestionAnswering.from_pretrained(args.bert_model,
-                cache_dir=PYTORCH_PRETRAINED_BERT_CACHE / 'distributed_{}'.format(args.local_rank),args=args)
+                cache_dir=PYTORCH_PRETRAINED_BERT_CACHE / 'distributed_{}'.format(args.local_rank))
 
     if args.fp16:
         model.half()
@@ -908,7 +908,7 @@ def main():
                 if n_gpu == 1:
                     batch = tuple(t.to(device) for t in batch) # multi-gpu does scattering it-self
                 input_ids, input_mask, segment_ids, start_positions, end_positions = batch
-                loss = model(input_ids, segment_ids, input_mask, start_positions, end_positions)
+                loss = model(input_ids, segment_ids, input_mask, start_positions, end_positions, args=args)
                 if n_gpu > 1:
                     loss = loss.mean() # mean() to average on multi-gpu.
                 if args.gradient_accumulation_steps > 1:

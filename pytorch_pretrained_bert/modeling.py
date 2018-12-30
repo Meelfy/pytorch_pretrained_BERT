@@ -1085,16 +1085,15 @@ class BertForQuestionAnswering(PreTrainedBertModel):
     start_logits, end_logits = model(input_ids, token_type_ids, input_mask)
     ```
     """
-    def __init__(self, config, args):
+    def __init__(self, config):
         super(BertForQuestionAnswering, self).__init__(config)
         self.bert = BertModel(config)
-        self.args = args
         # TODO check with Google if it's normal there is no dropout on the token classifier of SQuAD in the TF version
         # self.dropout = nn.Dropout(config.hidden_dropout_prob)
         self.qa_outputs = nn.Linear(config.hidden_size, 2)
         self.apply(self.init_bert_weights)
 
-    def forward(self, input_ids, token_type_ids=None, attention_mask=None, start_positions=None, end_positions=None):
+    def forward(self, input_ids, token_type_ids=None, attention_mask=None, start_positions=None, end_positions=None, args=None):
         sequence_output, _ = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
         logits = self.qa_outputs(sequence_output)
         start_logits, end_logits = logits.split(1, dim=-1)
@@ -1113,11 +1112,9 @@ class BertForQuestionAnswering(PreTrainedBertModel):
             answers_len = (end_positions.argmax(1) - start_positions.argmax(1) + 1).float()
             # when sigma is a large num, the loss will cross entropy
             # [batch_size]
-            sigma = (answers_len/t-answers_len)/self.args.theta
+            sigma = (answers_len/t-answers_len)/args.theta
             #sigma = torch.ones(answers_len.size()).float() * 0.1
             def one_cornerNet_loss(logits, positions, alpha:float=2, beta:float=4):
-                alpha = self.args.alpha
-                beta = self.args.beta
                 batch_size, length = logits.size()
                 logits = logits.float()
                 positions = positions.float()
@@ -1132,8 +1129,8 @@ class BertForQuestionAnswering(PreTrainedBertModel):
                 loss += torch.sum(torch.pow(1-y, beta).cuda() * torch.pow(p, alpha).cuda() * torch.log(1-p).cuda())
                 loss = -loss
                 return loss
-            return 0.5*(one_cornerNet_loss(start_logits, start_positions) +
-                        one_cornerNet_loss(end_logits, end_positions)) 
+            return 0.5*(one_cornerNet_loss(start_logits, start_positions, args.alpha, args.beta) +
+                        one_cornerNet_loss(end_logits, end_positions, args.alpha, args.beta)) 
 
 
         if start_positions is not None and end_positions is not None:
@@ -1146,15 +1143,14 @@ class BertForQuestionAnswering(PreTrainedBertModel):
             ignored_index = start_logits.size(1)-1
             start_positions.clamp_(0, ignored_index)
             end_positions.clamp_(0, ignored_index)
-
-            total_loss = cornerNet_loss(start_logits, torch.eye(start_logits.size(1))[start_positions],
-                           end_logits, torch.eye(end_logits.size(1))[end_positions])
-            '''
-            loss_fct = CrossEntropyLoss(ignore_index=ignored_index)
-            start_loss = loss_fct(start_logits, start_positions)
-            end_loss = loss_fct(end_logits, end_positions)
-            total_loss = (start_loss + end_loss) / 2
-'''
+            if args:
+                total_loss = cornerNet_loss(start_logits, torch.eye(start_logits.size(1))[start_positions],
+                               end_logits, torch.eye(end_logits.size(1))[end_positions])
+            else:
+                loss_fct = CrossEntropyLoss(ignore_index=ignored_index)
+                start_loss = loss_fct(start_logits, start_positions)
+                end_loss = loss_fct(end_logits, end_positions)
+                total_loss = (start_loss + end_loss) / 2
             return total_loss
         else:
             return start_logits, end_logits
