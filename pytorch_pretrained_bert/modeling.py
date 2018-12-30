@@ -1085,9 +1085,10 @@ class BertForQuestionAnswering(PreTrainedBertModel):
     start_logits, end_logits = model(input_ids, token_type_ids, input_mask)
     ```
     """
-    def __init__(self, config):
+    def __init__(self, config, args):
         super(BertForQuestionAnswering, self).__init__(config)
         self.bert = BertModel(config)
+        self.args = args
         # TODO check with Google if it's normal there is no dropout on the token classifier of SQuAD in the TF version
         # self.dropout = nn.Dropout(config.hidden_dropout_prob)
         self.qa_outputs = nn.Linear(config.hidden_size, 2)
@@ -1112,9 +1113,11 @@ class BertForQuestionAnswering(PreTrainedBertModel):
             answers_len = (end_positions.argmax(1) - start_positions.argmax(1) + 1).float()
             # when sigma is a large num, the loss will cross entropy
             # [batch_size]
-            sigma = (answers_len/t-answers_len)/10
+            sigma = (answers_len/t-answers_len)/self.args.theta
             #sigma = torch.ones(answers_len.size()).float() * 0.1
             def one_cornerNet_loss(logits, positions, alpha:float=2, beta:float=4):
+                alpha = self.args.alpha
+                beta = self.args.beta
                 batch_size, length = logits.size()
                 logits = logits.float()
                 positions = positions.float()

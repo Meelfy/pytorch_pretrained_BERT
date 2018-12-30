@@ -746,6 +746,15 @@ def main():
                         help="Loss scaling to improve fp16 numeric stability. Only used when fp16 set to True.\n"
                              "0 (default value): dynamic loss scaling.\n"
                              "Positive power of 2: static loss scaling value.\n")
+    parser.add_argument('--theta',
+                        type=int, default=10,
+                        help="theta in loss func")
+    parser.add_argument('--alpha',
+                        type=float, default=2,
+                        help="alpha in loss func")
+    parser.add_argument('--beta',
+                        type=int, default=4,
+                        help="beta in loss func")
 
     args = parser.parse_args()
 
@@ -803,7 +812,7 @@ def main():
 
     # Prepare model
     model = BertForQuestionAnswering.from_pretrained(args.bert_model,
-                cache_dir=PYTORCH_PRETRAINED_BERT_CACHE / 'distributed_{}'.format(args.local_rank))
+                cache_dir=PYTORCH_PRETRAINED_BERT_CACHE / 'distributed_{}'.format(args.local_rank),args=args)
 
     if args.fp16:
         model.half()
@@ -904,7 +913,7 @@ def main():
                     loss = loss.mean() # mean() to average on multi-gpu.
                 if args.gradient_accumulation_steps > 1:
                     loss = loss / args.gradient_accumulation_steps
-                print(loss, end=" \r")
+
                 if args.fp16:
                     optimizer.backward(loss)
                 else:
