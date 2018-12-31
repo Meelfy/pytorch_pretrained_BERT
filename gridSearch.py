@@ -1,9 +1,9 @@
 import os
 import itertools
 # theta = [1, 3, 10]
-theta = [3]
+theta = [1]
 alpha = [0.5, 1., 2.]
-beta  = [1, 2, 4]
+beta  = [0]
 for theta, alpha, beta in itertools.product(theta, alpha, beta):
     cmd   = []
     cmd.append("export CUDA_VISIBLE_DEVICES=2,3")
@@ -19,7 +19,7 @@ for theta, alpha, beta in itertools.product(theta, alpha, beta):
               --predict_file $SQUAD_DIR/dev-v1.1.json \
               --train_batch_size 12 \
               --learning_rate 3e-5 \
-              --num_train_epochs 2.0 \
+              --num_train_epochs 5.0 \
               --max_seq_length 384 \
               --doc_stride 128 \
               --seed 1\
