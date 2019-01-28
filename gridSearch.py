@@ -32,7 +32,7 @@ for theta, alpha, beta in itertools.product(theta, alpha, beta):
                     --output_dir $SAVE_DIR > ./out/{0}_{1}_{2}_newloss_saveLoss.out 2>&1"
                    .format(theta, alpha, beta))
     elif small_or_large == 'large':
-        cmd.append("export SAVE_DIR=/tmp/SQuAD_v1-{0}_{1}_{2}_newloss_large/".format(theta, alpha, beta))
+        cmd.append("export SAVE_DIR=/tmp/SQuAD_v1-{0}_{1}_{2}_newloss_large_1/".format(theta, alpha, beta))
         cmd.append("python examples/run_squad.py \
                     --bert_model /data/nfsdata/nlp/BERT_BASE_DIR/uncased_L-24_H-1024_A-16 \
                     --do_train \
@@ -50,6 +50,6 @@ for theta, alpha, beta in itertools.product(theta, alpha, beta):
                     --theta {0}\
                     --alpha {1}\
                     --beta {2}\
-                    --loss_scale 128 > ./out/{0}_{1}_{2}_newloss_large.out 2>&1".format(theta, alpha, beta))
+                    --loss_scale 128>./out/{0}_{1}_{2}_newloss_large_2.out 2>&1".format(theta, alpha, beta))
     cmd = ";".join(cmd)
     os.system(cmd)

@@ -906,15 +906,20 @@ def main():
             model.train()
             for step, batch in enumerate(tqdm(train_dataloader, desc="Iteration")):
                 if n_gpu == 1:
-                    batch = tuple(t.to(device) for t in batch) # multi-gpu does scattering it-self
+                    batch = tuple(t.to(device) for t in batch)  # multi-gpu does scattering it-self
                 input_ids, input_mask, segment_ids, start_positions, end_positions = batch
-                loss = model(input_ids, segment_ids, input_mask, start_positions, end_positions, args=args)
+                try:
+                    loss = model(input_ids, segment_ids, input_mask, start_positions, end_positions,
+                                 args=args)
+                except Exception as e:
+                    continue
                 if n_gpu > 1:
-                    loss = loss.mean() # mean() to average on multi-gpu.
+                    loss = loss.mean()  # mean() to average on multi-gpu.
                 if args.gradient_accumulation_steps > 1:
                     loss = loss / args.gradient_accumulation_steps
+
                 def write_loss_to_file(loss):
-                    with open('/home/meefly/data/results/loss_analysis/bert_1.loss', 'a') as f:
+                    with open('/home/meefly/data/results/loss_analysis/bert_large.loss', 'a') as f:
                         f.write(str(loss) + '\n')
                     return
                 write_loss_to_file(loss)
@@ -924,7 +929,8 @@ def main():
                     loss.backward()
                 if (step + 1) % args.gradient_accumulation_steps == 0:
                     # modify learning rate with special warm up BERT uses
-                    lr_this_step = args.learning_rate * warmup_linear(global_step/t_total, args.warmup_proportion)
+                    lr_this_step = args.learning_rate * warmup_linear(global_step / t_total,
+                                                                      args.warmup_proportion)
                     for param_group in optimizer.param_groups:
                         param_group['lr'] = lr_this_step
                     optimizer.step()
@@ -932,10 +938,11 @@ def main():
                     global_step += 1
 
             # make predictions at every epoch
-            # # Save a trained model
-            # model_to_save = model.module if hasattr(model, 'module') else model  # Only save the model it-self
-            # output_model_file = os.path.join(args.output_dir, "pytorch_model_{}.bin".format(epoch))
-            # torch.save(model_to_save.state_dict(), output_model_file)
+            # Save a trained model
+            model_to_save = model.module if hasattr(model, 'module') else model
+            # Only save the model it-self
+            output_model_file = os.path.join(args.output_dir, "pytorch_model_{}.bin".format(epoch))
+            torch.save(model_to_save.state_dict(), output_model_file)
 
             # # Load a trained model that you have fine-tuned
             # model_state_dict = torch.load(output_model_file)
@@ -994,9 +1001,9 @@ def main():
                                   output_nbest_file, args.verbose_logging)
 
     # Save a trained model
-    model_to_save = model.module if hasattr(model, 'module') else model  # Only save the model it-self
-    output_model_file = os.path.join(args.output_dir, "pytorch_model.bin")
-    torch.save(model_to_save.state_dict(), output_model_file)
+    # model_to_save = model.module if hasattr(model, 'module') else model  # Only save the model it-self
+    # output_model_file = os.path.join(args.output_dir, "pytorch_model.bin")
+    # torch.save(model_to_save.state_dict(), output_model_file)
 
     # Load a trained model that you have fine-tuned
     model_state_dict = torch.load(output_model_file)
