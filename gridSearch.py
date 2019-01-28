@@ -2,30 +2,54 @@ import os
 import itertools
 # theta = [1, 3, 10]
 theta = [1]
-alpha = [0.5, 1., 2.]
-beta  = [0]
+# alpha = [0.001, 0.03, 0.3]
+alpha = [0.6]
+beta = [0]
+small_or_large = 'large'
 for theta, alpha, beta in itertools.product(theta, alpha, beta):
-    cmd   = []
-    cmd.append("export CUDA_VISIBLE_DEVICES=2,3")
+    cmd = []
+    cmd.append("export CUDA_VISIBLE_DEVICES=0,1,2,3")
     cmd.append("export SQUAD_DIR=/data/nfsdata/meijie/data/SQuAD/")
     cmd.append("export PYTHONPATH=/home/meefly/working/pytorch_pretrained_BERT/:$PYTHONPATH")
-    cmd.append("export SAVE_DIR=/tmp/SQuAD_v1-{0}_{1}_{2}_newloss/".format(theta, alpha, beta))
-    cmd.append("python examples/run_squad.py \
-              --bert_model /data/nfsdata/meijie/data/uncased_L-12_H-768_A-12 \
-              --do_train \
-              --do_predict \
-              --do_lower_case \
-              --train_file $SQUAD_DIR/train-v1.1.json \
-              --predict_file $SQUAD_DIR/dev-v1.1.json \
-              --train_batch_size 12 \
-              --learning_rate 3e-5 \
-              --num_train_epochs 5.0 \
-              --max_seq_length 384 \
-              --doc_stride 128 \
-              --seed 1\
-              --theta {0}\
-              --alpha {1}\
-              --beta {2}\
-              --output_dir $SAVE_DIR > {0}_{1}_{2}_newloss.out 2>&1".format(theta, alpha, beta))
+    if small_or_large == 'small':
+        cmd.append("export SAVE_DIR=/tmp/SQuAD_v1-{0}_{1}_{2}_newloss_saveLoss/".format(theta, alpha, beta))
+        cmd.append("python examples/run_squad.py \
+                    --bert_model /data/nfsdata/meijie/data/uncased_L-12_H-768_A-12 \
+                    --do_train \
+                    --do_predict \
+                    --do_lower_case \
+                    --train_file $SQUAD_DIR/train-v1.1.json \
+                    --predict_file $SQUAD_DIR/dev-v1.1.json \
+                    --train_batch_size 12 \
+                    --learning_rate 1.5e-5 \
+                    --num_train_epochs 3.0 \
+                    --max_seq_length 384 \
+                    --doc_stride 128 \
+                    --seed 1\
+                    --theta {0}\
+                    --alpha {1}\
+                    --beta {2}\
+                    --output_dir $SAVE_DIR > ./out/{0}_{1}_{2}_newloss_saveLoss.out 2>&1"
+                   .format(theta, alpha, beta))
+    elif small_or_large == 'large':
+        cmd.append("export SAVE_DIR=/tmp/SQuAD_v1-{0}_{1}_{2}_newloss_large/".format(theta, alpha, beta))
+        cmd.append("python examples/run_squad.py \
+                    --bert_model /data/nfsdata/nlp/BERT_BASE_DIR/uncased_L-24_H-1024_A-16 \
+                    --do_train \
+                    --do_predict \
+                    --do_lower_case \
+                    --train_file $SQUAD_DIR/train-v1.1.json \
+                    --predict_file $SQUAD_DIR/dev-v1.1.json \
+                    --learning_rate 1e-5 \
+                    --num_train_epochs 3 \
+                    --max_seq_length 384 \
+                    --doc_stride 128 \
+                    --output_dir $SAVE_DIR \
+                    --train_batch_size 8 \
+                    --seed 1\
+                    --theta {0}\
+                    --alpha {1}\
+                    --beta {2}\
+                    --loss_scale 128 > ./out/{0}_{1}_{2}_newloss_large.out 2>&1".format(theta, alpha, beta))
     cmd = ";".join(cmd)
     os.system(cmd)

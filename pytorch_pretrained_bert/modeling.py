@@ -1112,7 +1112,7 @@ class BertForQuestionAnswering(PreTrainedBertModel):
             answers_len = (end_positions.argmax(1) - start_positions.argmax(1) + 1).float()
             # when sigma is a large num, the loss will cross entropy
             # [batch_size]
-            sigma = (answers_len/t-answers_len)/args.theta
+            sigma = (answers_len / t - answers_len) / args.theta
             #sigma = torch.ones(answers_len.size()).float() * 0.1
             def one_cornerNet_loss(logits, positions, alpha:float=2, beta:float=4):
                 batch_size, length = logits.size()

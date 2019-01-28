@@ -913,7 +913,11 @@ def main():
                     loss = loss.mean() # mean() to average on multi-gpu.
                 if args.gradient_accumulation_steps > 1:
                     loss = loss / args.gradient_accumulation_steps
-
+                def write_loss_to_file(loss):
+                    with open('/home/meefly/data/results/loss_analysis/bert_1.loss', 'a') as f:
+                        f.write(str(loss) + '\n')
+                    return
+                write_loss_to_file(loss)
                 if args.fp16:
                     optimizer.backward(loss)
                 else:
@@ -927,16 +931,16 @@ def main():
                     optimizer.zero_grad()
                     global_step += 1
 
-            # do predict every epochs
-            # Save a trained model
-            model_to_save = model.module if hasattr(model, 'module') else model  # Only save the model it-self
-            output_model_file = os.path.join(args.output_dir, "pytorch_model_{}.bin".format(epoch))
-            torch.save(model_to_save.state_dict(), output_model_file)
+            # make predictions at every epoch
+            # # Save a trained model
+            # model_to_save = model.module if hasattr(model, 'module') else model  # Only save the model it-self
+            # output_model_file = os.path.join(args.output_dir, "pytorch_model_{}.bin".format(epoch))
+            # torch.save(model_to_save.state_dict(), output_model_file)
 
-            # Load a trained model that you have fine-tuned
-            model_state_dict = torch.load(output_model_file)
-            model = BertForQuestionAnswering.from_pretrained(args.bert_model, state_dict=model_state_dict)
-            model.to(device)
+            # # Load a trained model that you have fine-tuned
+            # model_state_dict = torch.load(output_model_file)
+            # model = BertForQuestionAnswering.from_pretrained(args.bert_model, state_dict=model_state_dict)
+            # model.to(device)
 
             if args.do_predict and (args.local_rank == -1 or torch.distributed.get_rank() == 0):
                 eval_examples = read_squad_examples(
