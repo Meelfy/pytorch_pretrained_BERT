@@ -440,8 +440,8 @@ class PreTrainedBertModel(nn.Module):
             # cf https://github.com/pytorch/pytorch/pull/5617
             module.weight.data.normal_(mean=0.0, std=self.config.initializer_range)
         elif isinstance(module, BertLayerNorm):
-            module.bias.data.normal_(mean=0.0, std=self.config.initializer_range)
-            module.weight.data.normal_(mean=0.0, std=self.config.initializer_range)
+            module.bias.data.zero_()
+            module.weight.data.fill_(1.0)
         if isinstance(module, nn.Linear) and module.bias is not None:
             module.bias.data.zero_()
 
@@ -457,7 +457,9 @@ class PreTrainedBertModel(nn.Module):
                     . `bert-base-uncased`
                     . `bert-large-uncased`
                     . `bert-base-cased`
-                    . `bert-base-multilingual`
+                    . `bert-large-cased`
+                    . `bert-base-multilingual-uncased`
+                    . `bert-base-multilingual-cased`
                     . `bert-base-chinese`
                 - a path or url to a pretrained model archive containing:
                     . `bert_config.json` a configuration file for the model
@@ -729,7 +731,7 @@ class BertForMaskedLM(PreTrainedBertModel):
             is only computed for the labels set in [0, ..., vocab_size]
 
     Outputs:
-        if `masked_lm_labels` is `None`:
+        if `masked_lm_labels` is  not `None`:
             Outputs the masked language modeling loss.
         if `masked_lm_labels` is `None`:
             Outputs the masked language modeling logits of shape [batch_size, sequence_length, vocab_size].
@@ -984,7 +986,7 @@ class BertForTokenClassification(PreTrainedBertModel):
             selected in [0, 1]. It's a mask to be used if the input sequence length is smaller than the max
             input sequence length in the current batch. It's the mask that we typically use for attention when
             a batch has varying length sentences.
-        `labels`: labels for the classification output: torch.LongTensor of shape [batch_size]
+        `labels`: labels for the classification output: torch.LongTensor of shape [batch_size, sequence_length]
             with indices selected in [0, ..., num_labels].
 
     Outputs:
@@ -1024,7 +1026,14 @@ class BertForTokenClassification(PreTrainedBertModel):
 
         if labels is not None:
             loss_fct = CrossEntropyLoss()
-            loss = loss_fct(logits.view(-1, self.num_labels), labels.view(-1))
+            # Only keep active parts of the loss
+            if attention_mask is not None:
+                active_loss = attention_mask.view(-1) == 1
+                active_logits = logits.view(-1, self.num_labels)[active_loss]
+                active_labels = labels.view(-1)[active_loss]
+                loss = loss_fct(active_logits, active_labels)
+            else:
+                loss = loss_fct(logits.view(-1, self.num_labels), labels.view(-1))
             return loss
         else:
             return logits
@@ -1036,15 +1045,7 @@ class BertForQuestionAnswering(PreTrainedBertModel):
     the sequence output that computes start_logits and end_logits
 
     Params:
-        `config`: either
-            - a BertConfig class instance with the configuration to build a new model, or
-            - a str with the name of a pre-trained model to load selected in the list of:
-                . `bert-base-uncased`
-                . `bert-large-uncased`
-                . `bert-base-cased`
-                . `bert-base-multilingual`
-                . `bert-base-chinese`
-                The pre-trained model will be downloaded and cached if needed.
+        `config`: a BertConfig class instance with the configuration to build a new model.
 
     Inputs:
         `input_ids`: a torch.LongTensor of shape [batch_size, sequence_length]
@@ -1140,7 +1141,7 @@ class BertForQuestionAnswering(PreTrainedBertModel):
             if len(end_positions.size()) > 1:
                 end_positions = end_positions.squeeze(-1)
             # sometimes the start/end positions are outside our model inputs, we ignore these terms
-            ignored_index = start_logits.size(1)-1
+            ignored_index = start_logits.size(1)
             start_positions.clamp_(0, ignored_index)
             end_positions.clamp_(0, ignored_index)
             if args:

@@ -123,3 +123,5 @@ tensorflow_code
 
 # nohup
 *.out
+# Models
+models
