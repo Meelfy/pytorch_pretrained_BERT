@@ -3,7 +3,7 @@ import itertools
 # theta = [1, 3, 10]
 theta = [1]
 # alpha = [0.001, 0.03, 0.3]
-alpha = [0.6]
+alpha = [0]
 beta = [0]
 small_or_large = 'large'
 for theta, alpha, beta in itertools.product(theta, alpha, beta):
@@ -20,8 +20,8 @@ for theta, alpha, beta in itertools.product(theta, alpha, beta):
                     --do_lower_case \
                     --train_file $SQUAD_DIR/train-v1.1.json \
                     --predict_file $SQUAD_DIR/dev-v1.1.json \
-                    --train_batch_size 12 \
-                    --learning_rate 1.5e-5 \
+                    --train_batch_size 1 \
+                    --learning_rate 3e-5 \
                     --num_train_epochs 3.0 \
                     --max_seq_length 384 \
                     --doc_stride 128 \
@@ -32,24 +32,26 @@ for theta, alpha, beta in itertools.product(theta, alpha, beta):
                     --output_dir $SAVE_DIR > ./out/{0}_{1}_{2}_newloss_saveLoss.out 2>&1"
                    .format(theta, alpha, beta))
     elif small_or_large == 'large':
-        cmd.append("export SAVE_DIR=/tmp/SQuAD_v1-{0}_{1}_{2}_newloss_large_1/".format(theta, alpha, beta))
+        cmd.append("export SAVE_DIR=/tmp/SQuAD_v1-{0}_{1}_{2}_newloss_large_2/".format(theta, alpha, beta))
         cmd.append("python examples/run_squad.py \
                     --bert_model /data/nfsdata/nlp/BERT_BASE_DIR/uncased_L-24_H-1024_A-16 \
                     --do_train \
+                    --version_2_with_negative\
                     --do_predict \
                     --do_lower_case \
-                    --train_file $SQUAD_DIR/train-v1.1.json \
-                    --predict_file $SQUAD_DIR/dev-v1.1.json \
-                    --learning_rate 1e-5 \
+                    --train_file $SQUAD_DIR/train-v2.0.json \
+                    --predict_file $SQUAD_DIR/dev-v2.0.json \
+                    --learning_rate 3e-5 \
                     --num_train_epochs 3 \
                     --max_seq_length 384 \
                     --doc_stride 128 \
                     --output_dir $SAVE_DIR \
-                    --train_batch_size 8 \
-                    --seed 1\
+                    --train_batch_size 24 \
+                    --fp16\
                     --theta {0}\
                     --alpha {1}\
                     --beta {2}\
+                    --gradient_accumulation_steps 3\
                     --loss_scale 128>./out/{0}_{1}_{2}_newloss_large_2.out 2>&1".format(theta, alpha, beta))
     cmd = ";".join(cmd)
     os.system(cmd)
