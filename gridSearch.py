@@ -8,8 +8,8 @@ beta = [0]
 small_or_large = 'large'
 for theta, alpha, beta in itertools.product(theta, alpha, beta):
     cmd = []
-    cmd.append("export CUDA_VISIBLE_DEVICES=0,1,2,3")
-    cmd.append("export SQUAD_DIR=/data/nfsdata/meijie/data/SQuAD/")
+    cmd.append("export CUDA_VISIBLE_DEVICES=0,1,3")
+    cmd.append("export SQUAD_DIR=/data/nfsdata/meijie/data/SQuAD")
     cmd.append("export PYTHONPATH=/home/meefly/working/pytorch_pretrained_BERT/:$PYTHONPATH")
     if small_or_large == 'small':
         cmd.append("export SAVE_DIR=/tmp/SQuAD_v1-{0}_{1}_{2}_newloss_saveLoss/".format(theta, alpha, beta))
@@ -32,7 +32,7 @@ for theta, alpha, beta in itertools.product(theta, alpha, beta):
                     --output_dir $SAVE_DIR > ./out/{0}_{1}_{2}_newloss_saveLoss.out 2>&1"
                    .format(theta, alpha, beta))
     elif small_or_large == 'large':
-        cmd.append("export SAVE_DIR=/tmp/SQuAD_v1-{0}_{1}_{2}_newloss_large_2/".format(theta, alpha, beta))
+        cmd.append("export SAVE_DIR=/tmp/SQuAD_v2-{0}_{1}_{2}_newloss_large_2/".format(theta, alpha, beta))
         cmd.append("python examples/run_squad.py \
                     --bert_model /data/nfsdata/nlp/BERT_BASE_DIR/uncased_L-24_H-1024_A-16 \
                     --do_train \
@@ -42,16 +42,16 @@ for theta, alpha, beta in itertools.product(theta, alpha, beta):
                     --train_file $SQUAD_DIR/train-v2.0.json \
                     --predict_file $SQUAD_DIR/dev-v2.0.json \
                     --learning_rate 3e-5 \
-                    --num_train_epochs 3 \
+                    --num_train_epochs 2 \
                     --max_seq_length 384 \
                     --doc_stride 128 \
                     --output_dir $SAVE_DIR \
                     --train_batch_size 24 \
-                    --fp16\
+                    --fp16 \
                     --theta {0}\
                     --alpha {1}\
                     --beta {2}\
-                    --gradient_accumulation_steps 3\
+                    --gradient_accumulation_steps 2\
                     --loss_scale 128>./out/{0}_{1}_{2}_newloss_large_2.out 2>&1".format(theta, alpha, beta))
     cmd = ";".join(cmd)
     os.system(cmd)

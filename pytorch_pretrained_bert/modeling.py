@@ -1123,7 +1123,8 @@ class BertForQuestionAnswering(PreTrainedBertModel):
                 position_is_zero = torch.arange(0, positions.shape[1]).float().view(1,-1).expand(batch_size,-1) \
                                     - positions.argmax(1).float().view(-1,1).expand(-1,length)
                 y = torch.exp(-position_is_zero**2/(sigma**2).view(-1,1).expand(-1,length)/2)
-                p = torch.exp(logits)/torch.sum(torch.exp(logits),1).view(-1,1).expand(-1,length)
+                p = torch.softmax(logits, dim=-1)
+                # p = torch.exp(logits)/torch.sum(torch.exp(logits),1).view(-1,1).expand(-1,length)
                 # the loss for positions = 1
                 loss = torch.sum(positions.cuda() * torch.pow(1-p, alpha).cuda() * torch.log(p).cuda())
                 # the loss for positions ~= 1
