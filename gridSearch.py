@@ -1,14 +1,15 @@
 import os
 import itertools
-# theta = [1, 3, 10]
-theta = [1]
+import time
+theta = [1, 3, 10]
+# theta = [1]
 # alpha = [0.001, 0.03, 0.3]
-alpha = [0]
-beta = [0]
+alpha = [0, 0.6, 0.7, 1]
+beta = [0, 1, 2, 4]
 small_or_large = 'large'
 for theta, alpha, beta in itertools.product(theta, alpha, beta):
     cmd = []
-    cmd.append("export CUDA_VISIBLE_DEVICES=0,1,3")
+    cmd.append("export CUDA_VISIBLE_DEVICES=1,2,3")
     cmd.append("export SQUAD_DIR=/data/nfsdata/meijie/data/SQuAD")
     cmd.append("export PYTHONPATH=/home/meefly/working/pytorch_pretrained_BERT/:$PYTHONPATH")
     if small_or_large == 'small':
@@ -52,6 +53,12 @@ for theta, alpha, beta in itertools.product(theta, alpha, beta):
                     --alpha {1}\
                     --beta {2}\
                     --gradient_accumulation_steps 2\
-                    --loss_scale 128>./out/{0}_{1}_{2}_newloss_large_2.out 2>&1".format(theta, alpha, beta))
+                    --loss_scale 128 > ./out/{0}_{1}_{2}_newloss_large_2.out 2>&1".format(theta, alpha, beta))
     cmd = ";".join(cmd)
-    os.system(cmd)
+    for i in range(4):
+        return_code = os.system(cmd)
+        if return_code == 0:
+            break
+        else:
+            print('sleep for {} secs'.format(10 ** i))
+            time.sleep(10 ** i)
