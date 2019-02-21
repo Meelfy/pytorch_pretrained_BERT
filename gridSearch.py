@@ -9,7 +9,7 @@ beta = [0, 1, 2, 4]
 small_or_large = 'large'
 for theta, alpha, beta in itertools.product(theta, alpha, beta):
     cmd = []
-    cmd.append("export CUDA_VISIBLE_DEVICES=1,2,3")
+    cmd.append("export CUDA_VISIBLE_DEVICES=0,1,2")
     cmd.append("export SQUAD_DIR=/data/nfsdata/meijie/data/SQuAD")
     cmd.append("export PYTHONPATH=/home/meefly/working/pytorch_pretrained_BERT/:$PYTHONPATH")
     if small_or_large == 'small':
