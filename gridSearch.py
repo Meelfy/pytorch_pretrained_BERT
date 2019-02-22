@@ -8,8 +8,10 @@ alpha = [0, 0.6, 0.7, 1]
 beta = [0, 1, 2, 4]
 small_or_large = 'large'
 for theta, alpha, beta in itertools.product(theta, alpha, beta):
+    if theta == 1 and alpha == 0 and beta == 0:
+        continue
     cmd = []
-    cmd.append("export CUDA_VISIBLE_DEVICES=0,1,2")
+    cmd.append("export CUDA_VISIBLE_DEVICES=0,1,3")
     cmd.append("export SQUAD_DIR=/data/nfsdata/meijie/data/SQuAD")
     cmd.append("export PYTHONPATH=/home/meefly/working/pytorch_pretrained_BERT/:$PYTHONPATH")
     if small_or_large == 'small':
@@ -43,7 +45,7 @@ for theta, alpha, beta in itertools.product(theta, alpha, beta):
                     --train_file $SQUAD_DIR/train-v2.0.json \
                     --predict_file $SQUAD_DIR/dev-v2.0.json \
                     --learning_rate 3e-5 \
-                    --num_train_epochs 2 \
+                    --num_train_epochs 3 \
                     --max_seq_length 384 \
                     --doc_stride 128 \
                     --output_dir $SAVE_DIR \
