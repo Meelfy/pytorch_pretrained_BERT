@@ -8,12 +8,10 @@ alpha = [0, 0.6, 0.7, 1]
 beta = [0, 1, 2, 4]
 small_or_large = 'large'
 for theta, alpha, beta in itertools.product(theta, alpha, beta):
-    if theta == 1 and alpha == 0 and beta == 0:
-        continue
     cmd = []
-    cmd.append("export CUDA_VISIBLE_DEVICES=0,1,3")
-    cmd.append("export SQUAD_DIR=/data/nfsdata/meijie/data/SQuAD")
-    cmd.append("export PYTHONPATH=/home/meefly/working/pytorch_pretrained_BERT/:$PYTHONPATH")
+    cmd.append("export CUDA_VISIBLE_DEVICES=0,2,3,4,6,7")
+    cmd.append("export SQUAD_DIR=/home/meijie/data/squad")
+    cmd.append("export PYTHONPATH=/home/meijie/working/pytorch_pretrained_BERT/:$PYTHONPATH")
     if small_or_large == 'small':
         cmd.append("export SAVE_DIR=/tmp/SQuAD_v1-{0}_{1}_{2}_newloss_saveLoss/".format(theta, alpha, beta))
         cmd.append("python examples/run_squad.py \
@@ -37,7 +35,7 @@ for theta, alpha, beta in itertools.product(theta, alpha, beta):
     elif small_or_large == 'large':
         cmd.append("export SAVE_DIR=/tmp/SQuAD_v2-{0}_{1}_{2}_newloss_large_2/".format(theta, alpha, beta))
         cmd.append("python examples/run_squad.py \
-                    --bert_model /data/nfsdata/nlp/BERT_BASE_DIR/uncased_L-24_H-1024_A-16 \
+                    --bert_model /home/meijie/data/bert/uncased_L-24_H-1024_A-16 \
                     --do_train \
                     --version_2_with_negative\
                     --do_predict \
@@ -50,7 +48,6 @@ for theta, alpha, beta in itertools.product(theta, alpha, beta):
                     --doc_stride 128 \
                     --output_dir $SAVE_DIR \
                     --train_batch_size 24 \
-                    --fp16 \
                     --theta {0}\
                     --alpha {1}\
                     --beta {2}\
